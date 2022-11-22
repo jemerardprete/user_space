@@ -1,0 +1,35 @@
+section {
+  width: fit-content;
+  margin: auto;
+}
+
+section div {
+  text-align: right;
+  margin: 1em 0;
+}
+
+label {
+  padding-right: 0.5em;
+}
+
+button {
+  border: 0;
+  padding: 0.5em 2em;
+  margin-top: 1em;
+  color: white;
+  background-color: hotpink;
+}
+
+@media (max-width: 576px) {
+  section {
+    width: 100%;
+  }
+
+  section div {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+  }
+}
