@@ -1,10 +1,12 @@
 import React from 'react';
+import './Hack.css';
+import QRCode from "react-qr-code";
 
 const selectContact = async () => {
-  const list = document.getElementById('list');
+  const contactView = document.getElementById('contactView');
 
   if (!('contacts' in navigator)) {
-    list.innerHTML = 'Navigateur non compatible';
+    contactView.innerHTML = 'Navigateur non compatible';
     return null;
   }
 
@@ -12,7 +14,7 @@ const selectContact = async () => {
     multiple: false,
   });
 
-  list.innerHTML = `${contact[0].name[0]} - ${contact[0].tel[0]}`;
+  contactView.innerHTML = `${contact[0].name[0]} - ${contact[0].tel[0]}`;
 }
 
 const Hack = () => {
@@ -20,7 +22,15 @@ const Hack = () => {
   return (
     <section>
       <button onClick={() => selectContact()}>Hack</button>
-      <div id="list"></div>
+      <div id="contactView"></div>
+      <div class="qrcode">
+        <QRCode
+          size={256}
+          style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+          value="https://console.firebase.google.com/project/userspace-60a2c/overview"
+          viewBox={`0 0 256 256`}
+        />
+      </div>
     </section>
   );
 }
