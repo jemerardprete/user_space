@@ -8,7 +8,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
 
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) return <p className="loader">En attente...</p>
 
   return (
     <div className="App">

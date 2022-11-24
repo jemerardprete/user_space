@@ -23,7 +23,7 @@ const Hack = () => {
     <section>
       <button onClick={() => selectContact()}>Hack</button>
       <div id="contactView"></div>
-      <div class="qrcode">
+      <div className="qrcode">
         <QRCode
           size={256}
           style={{ height: "auto", maxWidth: "100%", width: "100%" }}
